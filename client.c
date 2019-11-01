@@ -35,7 +35,7 @@ int clientTCP(char* ip, int port, char* msg){
     serv_addr.sin_family = AF_INET; 
     serv_addr.sin_port = htons(port); 
        
-    // Convert IPv4 and IPv6 addresses from text to binary form 
+    
     if(inet_pton(AF_INET, ip, &serv_addr.sin_addr)<=0)  
     { 
         printf("Client: Error Converting IP string\n"); 
@@ -61,7 +61,6 @@ int clientUDP(char* ip, int port, char* msg){
 
     int newSocket; 
     char buffer[1024]; 
-    //char *hello = "Hello from client"; 
     struct sockaddr_in servaddr; 
   
     // Create new socket
